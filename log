@@ -25,3 +25,7 @@ Wed, Mar 19, 2025  9:42:39 AM:
  tests:  2|3
 total_score: 20/70
 9956b29
+Sat, Mar 22, 2025  2:46:30 PM: 
+./test.sh: line 26: gcc: command not found
+Compilation failed
+d1bdb64
