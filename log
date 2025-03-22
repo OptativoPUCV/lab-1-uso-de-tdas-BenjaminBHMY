@@ -41,3 +41,14 @@ Sat, Mar 22, 2025  3:32:28 PM:
  tests:  2|3
 total_score: 20/70
 583a7c6
+Sat, Mar 22, 2025  6:07:11 PM: 
+ exercises.c | 6 ++++++
+ 1 file changed, 6 insertions(+)
+In file included from test.c:5:0:
+exercises.c: In function 'eliminaElementos':
+exercises.c:88:29: error: comparison between pointer and integer [-Werror]
+       if (((int *) auxElem) == elem) popCurrent(L);
+                             ^~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+d6d2fb0

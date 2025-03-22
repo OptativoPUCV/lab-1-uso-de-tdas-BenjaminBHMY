@@ -81,7 +81,13 @@ posiciona en el elemento anterior.
 */
 
 void eliminaElementos(List*L, int elem){
+   void *auxElem = first(L);
 
+   while (auxElem != NULL)
+   {
+      if (((int *) auxElem) == elem) popCurrent(L);
+      auxElem = next(L);
+   }
 }
 
 /*
@@ -104,4 +110,5 @@ paraéntesis balanceados. Retorna 1 si están balanceados,
 int parentesisBalanceados(char *cadena) {
    return 0;
 }
+
 
