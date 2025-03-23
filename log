@@ -92,3 +92,14 @@ exercises.c:111:7: error: 'dato' may be used uninitialized in this function [-We
 cc1.exe: all warnings being treated as errors
 Compilation failed
 f851d9a
+Sun, Mar 23, 2025  8:29:23 PM: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:0:
+test.c: In function 'copia_pila':
+exercises.c:118:22: error: 'dato' may be used uninitialized in this function [-Werror=maybe-uninitialized]
+       *((int*)aux) = *((int*)dato);
+                      ^~~~~~~~~~~~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+33caa23
