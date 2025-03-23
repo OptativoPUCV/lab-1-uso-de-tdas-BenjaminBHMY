@@ -129,17 +129,6 @@ void copia_pila(Stack* P1, Stack* P2)
       pop(auxPila);
    }
    free(auxPila);
-   
-int resultado = (top(pila) == NULL) ? 1 : 0;
-
-while (top(pila) != NULL)
-{
-   free(pop(pila));
-}
-
-free(pila);
-return resultado;
-
 }
 
 /*
