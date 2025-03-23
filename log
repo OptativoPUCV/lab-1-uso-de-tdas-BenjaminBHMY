@@ -63,3 +63,10 @@ exercises.c:128:11: error: unused variable 'P' [-Werror=unused-variable]
 cc1.exe: all warnings being treated as errors
 Compilation failed
 e2eb978
+Sun, Mar 23, 2025  8:02:07 PM: 
+ exercises.c | 8 --------
+ 1 file changed, 8 deletions(-)
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file a.out: Permission denied
+collect2.exe: error: ld returned 1 exit status
+Compilation failed
+168a956
