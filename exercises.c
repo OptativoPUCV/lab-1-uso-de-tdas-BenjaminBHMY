@@ -160,5 +160,14 @@ for (int i = 0; cadena[i] != '\0'; i++)
       free(pop(pila));
    }
 }
-   return 0;
+
+int resultado = (top(pila) == NULL) ? 1 : 0;
+
+while (top(pila) != NULL)
+{
+   free(pop(pila));
+}
+
+free(pila);
+return resultado;
 }
