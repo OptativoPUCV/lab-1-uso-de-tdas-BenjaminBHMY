@@ -81,12 +81,14 @@ posiciona en el elemento anterior.
 */
 
 void eliminaElementos(List*L, int elem){
-   void *auxElem = first(L);
+   int *auxElem = (int*)first(L);
 
    while (auxElem != NULL)
    {
-      if (((int *) auxElem) == elem) popCurrent(L);
-      auxElem = next(L);
+      if (*auxElem == elem) {
+         popCurrent(L);
+         auxElem = (int*)next(L);
+      }
    }
 }
 
@@ -98,6 +100,21 @@ Puedes usar una pila auxiliar.
 */
 
 void copia_pila(Stack* P1, Stack* P2) {
+   Stack *auxPila = create_stack();
+   void *dato;
+   while (top(P1))
+   {
+      dato = (void*) malloc(sizeof(void));
+      push(auxPila, dato);
+      pop(P1);
+   }
+   while (top(auxPila))
+   {
+      push(P1, dato);
+      push(P2, dato);
+      pop(auxPila);
+   }
+   free(auxPila);
 }
 
 /*
@@ -108,7 +125,13 @@ paraéntesis balanceados. Retorna 1 si están balanceados,
 */
 
 int parentesisBalanceados(char *cadena) {
-   return 0;
+   Stack *P = create_stack();
+   int i = 0;
+while (cadena[i] != '\0')
+{
+   
+
 }
 
-
+   return 0;
+}
