@@ -114,6 +114,7 @@ void copia_pila(Stack* P1, Stack* P2) {
    }
    while (top(auxPila))
    {
+      dato = top(auxPila);
       aux = malloc(sizeof(int));
       if (aux == NULL) exit(1);
       *((int*)aux) = *((int*)dato);
