@@ -103,29 +103,18 @@ void copia_pila(Stack* P1, Stack* P2)
 {
    Stack *auxPila = create_stack();
    void *dato;
-   void *aux;
+   
    while (top(P1))
    {
       dato = top(P1);
-      aux = malloc(sizeof(int));
-      if (aux == NULL) exit(1);
-      *((int*)aux) = *((int*)dato);
-      push(auxPila, aux);
+      push(auxPila, dato);
       pop(P1);
    }
    while (top(auxPila))
    {
       dato = top(auxPila);
-      aux = malloc(sizeof(int));
-      if (aux == NULL) exit(1);
-      *((int*)aux) = *((int*)dato);
-      push(P1, aux);
-
-      aux = malloc(sizeof(int));
-      if (aux == NULL) exit(1);
-      *((int*)aux) = *((int*)dato);
-      push(P2, aux);
-
+      push(P1, dato);
+      push(P2, dato);
       pop(auxPila);
    }
    free(auxPila);
