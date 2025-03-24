@@ -143,20 +143,29 @@ Stack *pila = create_stack();
 
 for (int i = 0; cadena[i] != '\0'; i++)
 {
-   if (cadena[i] == '(')
+   if (cadena[i] == '(' || cadena[i] == '[' || cadena[i] == '{')
    {
       char* parentesis = (char*)malloc(sizeof(char));
       if (parentesis == NULL) exit(1);
-      *parentesis = '(';
+      *parentesis = cadena[i];
       push(pila, parentesis);
    }
-   else if (cadena[i] == ')')
+   else if (cadena[i] == ')' || cadena[i] == ']' || cadena[i] == '}')
    {
       if (top(pila) == NULL)
       {
          free(pila);
          return 0;
       }
+
+      char apertura = *(char *) top(pila);
+      if ((cadena[i] == ')' && apertura != '(') || (cadena[i] == ']' && apertura != '[') || (cadena[i] == '}' && apertura != '{'))
+      {
+         while (top(pila) != NULL) free(pop(pila));
+         free(pila);
+         return 0;
+      }
+
       free(pop(pila));
    }
 }
